@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>내면의 동물 찾기</title>
+  <!-- 제공해주신 AdSense 광고 스크립트 (한 번만 로드하면 됨) -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7990580164303240"
+     crossorigin="anonymous"></script>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -59,6 +62,7 @@
     }
     .ad-placeholder {
       margin: 20px 0;
+      /* 광고 영역 배경은 예시용으로 회색 처리 */
       background: #e0e0e0;
       text-align: center;
       padding: 10px;
@@ -72,7 +76,6 @@
       display: block;
       margin: 0 auto 20px auto;
     }
-    /* 결과 상세 설명 스타일 */
     #result-description {
       text-align: left;
       margin: 20px;
@@ -80,7 +83,6 @@
       line-height: 1.6;
       color: #444;
     }
-    /* 유명인 정보 스타일 */
     #result-celebrities {
       text-align: left;
       margin: 20px;
@@ -113,9 +115,18 @@
       <div class="progress" id="progress"></div>
       <div class="question" id="question-text"></div>
       <div id="options"></div>
-      <!-- Google AdSense 광고 영역 (예시) -->
+      <!-- AdSense 광고 영역 (퀴즈 페이지) -->
       <div class="ad-placeholder">
-        광고 영역
+        <!-- 광고 단위: 발급받은 ad-slot 값으로 변경 -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-7990580164303240"
+             data-ad-slot="1234567890"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
       </div>
     </div>
 
@@ -132,9 +143,17 @@
         <button id="restart-btn" class="btn">테스트 다시하기</button>
         <button id="share-btn" class="btn">결과 공유하기</button>
       </div>
-      <!-- Google AdSense 광고 영역 (예시) -->
+      <!-- AdSense 광고 영역 (결과 페이지) -->
       <div class="ad-placeholder">
-        광고 영역
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-7990580164303240"
+             data-ad-slot="0987654321"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
       </div>
     </div>
   </div>
@@ -310,7 +329,7 @@
       resultName.textContent = result.name;
       // 긴 상세 설명 출력
       resultDescription.textContent = result.detailed;
-      // 같은 성격을 가진 유명인 정보 출력
+      // 같은 성격의 유명인 정보 출력
       resultCelebrities.textContent = "같은 성격을 가진 유명인: " + result.celebrities;
     }
 
